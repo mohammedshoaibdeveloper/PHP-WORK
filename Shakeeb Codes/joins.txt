@@ -1,0 +1,39 @@
+inner join:
+
+SELECT * FROM customers,orders WHERE customers.cid=orders.cid order BY orderdate
+
+SELECT * FROM customers,orders WHERE customers.cid=orders.cid
+
+proper inner join query:
+
+agar bydefault join karo tu inner hi hoga
+
+1 SELECT * FROM customers JOIN orders on customers.cid=orders.cid
+
+2 SELECT * FROM customers INNER JOIN orders on customers.cid=orders.cid
+
+is 3 wali query ma errr q ka usko pata nhi chal raha kn si cid q ka 2 columns ha cid k 
+
+3 SELECT cid,cname,orderamount from customers join orders on customers.cid=orders.cid
+
+4 wali proper ha 
+
+4 SELECT customers.cid,cname,orderamount from customers join orders on customers.cid=orders.cid
+
+left join:
+
+left join waha use hoga jb asi query ho find all the customers with their order detail?
+
+1- SELECT customers.cid,cname,orderamount from customers LEFT join orders on customers.cid=orders.cid
+
+right join:(itna use nhi ha )
+
+2-SELECT customers.cid,cname,orderamount from customers RIGHT join orders on customers.cid=orders.cid
+foriegn Key
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
